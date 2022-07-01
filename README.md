@@ -68,9 +68,11 @@ Problems solved:
 #3. Windows shared Folder / Drive requires proper user & password.
 #4. Windows SMB shared Folder / Drive, link needs to be Created in Dolphin Network.
 #5. Windows SMB shared Folder / Drive needs to be mounted as local drive in Linux.
-$6. then luckyBackup / Rsync will work as usual.
-Rsync only works with ssh in Network,
-No direct SMB.
+#6. then luckyBackup / Rsync will work as usual.
+#7. Rsync only works with ssh in Network, No direct SMB.
+#8. ls does Not work directly with SMB shares.
+#9. smbclient does Not work with Windows without winbind & reboot.
+#10. smbclient is useless for Rsync.
 
 DONE.
 
