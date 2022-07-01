@@ -47,17 +47,20 @@ but Samba requires Login & Password.
 minimum User Login
 some passwords do Not work, if start with a character different than letters or numbers
 
-$ mount -t cifs -o username=USERNAME,password=PASSWD //192.168.xxx.xxx/SharedDrivreOrFolder /media/user/cifs
+$ mount -t cifs -o username=USERNAME,password=PASSWD //192.168.xxx.xxx/SharedDriveOrFolder /media/user/cifs
 
 if Password is Not compatible:
 
-$ mount -t cifs -o username=USERNAME //192.168.xxx.xxx/SharedDrivreOrFolder /media/user/cifs
+$ mount -t cifs -o username=USERNAME //192.168.xxx.xxx/SharedDriveOrFolder /media/user/cifs
 
 then will ask the password in Konsole,
 
-and the Network Drive/Folder will appear in Dolphin / Nautilus as Local
+If the Windows Machine has Static IP on the Router / Network Card,
+IF Not, you need the Windows Machine Name found in System. 
 
-then can be used as usual with luckyBakup.
+the Network Drive/Folder will appear automatically in Dolphin / Nautilus as Local Linux drive.
+
+then use LuckyBackup as usual.
 
 Problems solved:
 #1. Samba4.2 requires winbind
