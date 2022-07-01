@@ -71,3 +71,41 @@ Rsync only works with ssh in Network,
 No direct SMB.
 
 DONE.
+
+Option B)
+Buy Linux NTFS drivers from Paragon
+mount the NTFS HDD directly in Linux machine,
+problem:
+using Free Linux NTFS-3G drivers,
+compatibility is Not 100% with large drives 18TB / 20TB.
+Rsync will have problems when doing NTFS to XFS.
+XFS is the Recomended File Format for Large/Big Mechanical Drives.
+Ext4 is Not Recomended for Large/Big Mechanical Drives.
+
+Problem is compatibility between:
+Windows, Linux & OSX.
+
+XFS is very good, but Only for Linux,
+OSX and Windows have limited Read Only drivers from Paragon and FUSEOSX.
+
+Free HFS+ driver for Linux is very limited / incomplete.
+Free NTFS driver for Linux is better than HFS+ but Not 100%.
+drivers break very easy with large drives.
+
+NTFS requires constant defrag,
+does Not allow ? and many other characters.
+its very limited.
+thats why Windows Server has ReFS Not NTFS.
+
+Paragon has APFS drivers for Windows & Linux.
+OSX has APFS support since OSX HighSierra 10.13.6
+
+That could be the Only File System that is compatible with All systems.
+but how does work with Large/Big Mechanical HDDs ? Unknown.
+
+exFAT is free, comtabile between all systems,
+but is a very inferior File System vs. others.
+Emergency Only type.
+
+If Paragon had full support for XFS in OSX and Windows,
+that would be my to go FS.
