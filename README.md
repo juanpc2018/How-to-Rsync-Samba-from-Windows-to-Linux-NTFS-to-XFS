@@ -73,6 +73,8 @@ Problems solved:
 #8. ls does Not work directly with SMB shares.
 #9. smbclient does Not work with Windows without winbind & reboot.
 #10. smbclient is useless for Rsync.
+#11. remote://ip4 is useless for Rsync.
+#12. smb://ip4 is useless for Rsync.
 
 DONE.
 
