@@ -70,7 +70,7 @@ Problems solved:
 #5. Windows SMB shared Folder / Drive needs to be mounted as local drive in Linux.
 #6. then luckyBackup / Rsync will work as usual.
 #7. Rsync only works with ssh in Network, No direct SMB.
-#8. ls does Not work directly with SMB shares.
+#8. $ ls smb://ip4 does Not work with SMB shares, SMB shares can only be RW with Dolphin / Nautilus.
 #9. smbclient does Not work with Windows without winbind & reboot.
 #10. smbclient is useless for Rsync.
 #11. remote://ip4 is useless for Rsync.
