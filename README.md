@@ -7,12 +7,11 @@ others are misleading / decoys.
 
 Samba4.2
 Requires winbind
-Not installed by default in Kubuntu 21.10
-synaptic, muon or similar package manager.
+Not installed by default in Kubuntu 21.10 , install with synaptic, muon or similar package manager.
 
-Share the Windows Folder,
+Share the Windows Folder or Drive in Windows,
 Select a Proper User & Password,
-Giving Full Rights to Everybody does Not work.
+Giving Full Rights to Everybody does Not work for Samba.
 
 In Linux:
 LuckyBackup is a GUI FrontEnd for Rsync, the advantage is that can store different settings / configurations.
