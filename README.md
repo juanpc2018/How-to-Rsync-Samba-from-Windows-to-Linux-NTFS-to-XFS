@@ -17,50 +17,65 @@ In Linux:
 LuckyBackup is a GUI FrontEnd for Rsync, the advantage is that can store different settings / configurations.
 similar to AllWaySync for Windows.
 but...
-Rsync only does ssh over Network.
-but you want Samba
+Rsync only does ssh over Network, and you want Samba.
 "Easy"
-after creating a Windows Share in Dolphin / Nautilus, and testing the Windows Shared Drive / Folder is working in Nautilus / Dolphin.
+after creating a Windows Share in Dolphin / Nautilus, and testing the Windows Drive / Folder is working in Nautilus / Dolphin.
 then
-you need to mount the SMB shared folder, to a folder Nautilus / Dolphin can detect.
-as Local,
+you need to mount the SMB shared folder, to a folder Nautilus / Dolphin can detect as Local,
 $ mkdir /media/UserName/cifs
 
 but ¿what the hell is cifs?
 in FreeBSD is called smbfs
 but in Debian is cifs "totally unrelated name"
 
-you can see the FS your kernel support:
+you can see all the FileSysytems your kernel supports:
 $ ls /lib/modules/$(uname -r)/kernel/fs
 
 as recomended by:
 $ man mount
 
-there is No smbfs
+there is No smbfs in Debian
 but cifs is the same, with a weird name.
 +1 point to FreeBSD,
 -1 point for Kubuntu
+Common Internet File System (CIFS)
 
-$ mount -t cifs /source /destination
+$ mount -t cifs /sourceIP/FolderOrDrive /local_destination
 
-but Samba requires Login & Password.
-minimum User Login
-some passwords do Not work, if start with a character different than letters or numbers
+Samba requires Login & Password.
+minimum User,
+some passwords do Not work, if start with a character different than letters or numbers.
 
-$ mount -t cifs -o username=USERNAME,password=PASSWD //192.168.xxx.xxx/SharedDriveOrFolder /media/user/cifs
+$ mount -t cifs -o username=USERNAME,password=PWD //192.168.xxx.xxx/SharedDriveOrFolder /media/user/cifs
 
 if Password is Not compatible:
 
 $ mount -t cifs -o username=USERNAME //192.168.xxx.xxx/SharedDriveOrFolder /media/user/cifs
 
-then will ask the password in Konsole,
+Samba will ask the password in Konsole,
 
 If the Windows Machine has Static IP on the Router / Network Card,
-IF Not, you need the Windows Machine Name found in System. 
+IF Not, use the Windows Machine Name in System. 
 
 the Network Drive/Folder will appear automatically in Dolphin / Nautilus as Local Linux drive.
+with Perfect NTFS compatibility, 
 
-then use LuckyBackup as usual.
+then LuckyBackup can be used as usual, 
+with Perfect XFS compatibility.
+
+Large 18TB HSMR HDDs can R&W at 250MB/s
+but 1GbE Network = 1000Mbps = 125MB/s.
+To avoid Network bottlenecks, needs a faster Network adapter.
+
+SFP+ is 10G
+Lc-Lc Om1 Om2 Om3 Fiber Optic cable at 850nm wavelenght for Short Range: 30mts, 80mts, 300mts.
+cable is color coded, usually Orange for SR.
+
+SFP is 8G or less, down to 1.25GbE.
+
+There are Faster Network adapters, 
+SFP28 = 25GbE, QSFP+ = 40Gbe,
+up to 800Gbe.
 
 Problems solved:
 #1. Samba4.2 requires winbind
@@ -70,11 +85,12 @@ Problems solved:
 #5. Windows SMB shared Folder / Drive needs to be mounted as local drive in Linux.
 #6. then luckyBackup / Rsync will work as usual.
 #7. Rsync only works with ssh in Network, No direct SMB.
-#8. $ ls smb://ip4 does Not work with SMB shares, SMB shares can only be RW with Dolphin / Nautilus.
-#9. smbclient does Not work with Windows without winbind & reboot.
-#10. smbclient is useless for Rsync.
-#11. remote://ip4 is useless for Rsync.
-#12. smb://ip4 is useless for Rsync.
+#8. $ ls smb:// does Not work with SMB shares, SMB shares can only be RW with Dolphin / Nautilus.
+#9. $ ls remote:// does Not work with SMB shares, SMB shares can only be RW with Dolphin / Nautilus.
+#10. smbclient does Not work with Windows without winbind & reboot.
+#11. smbclient is useless for Rsync.
+#12. remote://ip4 is useless for Rsync.
+#13. smb://ip4 is useless for Rsync.
 
 DONE.
 
